@@ -1,0 +1,99 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Iris Dataset VisualizationThis notebook demonstrates two different visualizations of the Iris flower dataset."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Import required libraries\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "jupyter": {
+     "source_hidden": true
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Load the dataset\n",
+    "iris = pd.read_csv('../iris.csv')\n",
+    "iris.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Visualization 1: Scatter Plot of Sepal Dimensions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create scatter plot\n",
+    "plt.figure(figsize=(8, 6))\n",
+    "sns.scatterplot(data=iris, x='sepal_length', y='sepal_width', hue='species')\n",
+    "plt.title('Sepal Length vs Sepal Width by Species')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Visualization 2: Box Plot of Petal Dimensions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create box plot\n",
+    "plt.figure(figsize=(8, 6))\n",
+    "sns.boxplot(data=iris, x='species', y='petal_length')\n",
+    "plt.title('Petal Length Distribution by Species')\n",
+    "plt.show()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
